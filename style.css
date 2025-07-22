@@ -1,0 +1,231 @@
+
+    :root {
+      --metgold: #C0B283;
+      --metblack: #161616;
+      --metburgundy: #581845;
+      --metwhite: #f7f5f2;
+      --metgray: #232323;
+    }
+    body {
+      background: linear-gradient(135deg, var(--metburgundy) 0%, var(--metblack) 100%);
+      color: var(--metwhite);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: rgba(35,35,35,0.97);
+      padding: 35px 0 24px 0;
+      text-align: center;
+      border-bottom: 5px solid var(--metgold);
+      box-shadow: 0 4px 18px #0008;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      letter-spacing: 2px;
+      color: var(--metgold);
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      text-shadow: 0 1px 8px #000a;
+    }
+    header p {
+      font-size: 1.14rem;
+      color: var(--metwhite);
+      margin: 0 auto 0 auto;
+      max-width: 800px;
+      opacity: .87;
+    }
+    .container {
+      max-width: 1150px;
+      margin: 38px auto 60px auto;
+      padding: 0 14px;
+    }
+    .about-section {
+      background: var(--metgray);
+      border-radius: 13px;
+      margin-bottom: 40px;
+      padding: 22px 25px 20px 25px;
+      border-left: 7px solid var(--metgold);
+      color: var(--metgold);
+      font-size: 1.09rem;
+      line-height: 1.7;
+      box-shadow: 0 3px 15px #0004;
+    }
+    .nav-years {
+      margin: 0 auto 35px auto;
+      text-align: center;
+      max-width: 1000px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 7px;
+    }
+    .nav-years a {
+      display: inline-block;
+      color: var(--metgold);
+      background: var(--metburgundy);
+      border-radius: 8px;
+      border: 1px solid var(--metgold);
+      margin: 0 4px;
+      padding: 5px 13px;
+      font-size: 1rem;
+      text-decoration: none;
+      margin-bottom: 6px;
+      margin-top: 7px;
+      transition: background .12s, color .12s;
+    }
+    .nav-years a:hover, .nav-years a:focus {
+      background: var(--metgold);
+      color: var(--metburgundy);
+    }
+    .album {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 3%;
+      justify-content: center;
+    }
+    .year-card {
+      background: linear-gradient(135deg, #232323 70%, var(--metburgundy) 100%);
+      border-radius: 16px;
+      box-shadow: 0 3px 18px #0006;
+      padding: 21px 20px 18px 20px;
+      width: 340px;
+      min-width: 260px;
+      max-width: 360px;
+      margin-bottom: 14px;
+      border-top: 5px solid var(--metgold);
+      border-right: 2px solid var(--metburgundy);
+      display: flex;
+      flex-direction: column;
+      transition: transform .13s;
+    }
+    .year-card:hover {
+      transform: scale(1.025);
+      box-shadow: 0 6px 30px #C0B28344;
+      border-right: 2px solid var(--metgold);
+    }
+    .year-title {
+      color: var(--metgold);
+      font-size: 1.13rem;
+      margin-bottom: 3px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .theme {
+      font-size: 1.01rem;
+      margin-bottom: 10px;
+      color: #e7d8ba;
+      font-style: italic;
+    }
+    .looks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 7px;
+    }
+    .look-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #191919;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px #58184555;
+      padding: 7px 5px 7px 7px;
+      margin-bottom: 0;
+    }
+    .look-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 7px;
+      object-fit: cover;
+      border: 2px solid var(--metgold);
+      background: #333;
+      flex-shrink: 0;
+      box-shadow: 0 1px 7px #0003;
+      cursor: pointer;
+      transition: box-shadow .13s;
+    }
+    .look-img:hover {
+      box-shadow: 0 0 0 3px var(--metgold), 0 0 12px #58184599;
+      filter: brightness(1.1);
+    }
+    .look-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .look-name {
+      font-weight: bold;
+      font-size: 1.01rem;
+      color: var(--metwhite);
+      margin: 0 0 2px 0;
+    }
+    .look-desc {
+      color: #dacba6;
+      font-size: .99rem;
+      margin: 0;
+    }
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(20,0,20,0.93);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 0.2s;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 83vh;
+      border-radius: 14px;
+      box-shadow: 0 0 38px var(--metgold), 0 0 120px #58184588;
+      border: 4px solid var(--metgold);
+      background: #fff;
+      margin-bottom: 18px;
+    }
+    .lightbox-caption {
+      color: var(--metgold);
+      font-size: 1.08rem;
+      margin-bottom: 3vh;
+      max-width: 80vw;
+      text-align: center;
+      text-shadow: 0 1px 6px #000a;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 35px;
+      right: 50px;
+      color: var(--metgold);
+      font-size: 2.4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10100;
+      text-shadow: 0 1px 10px #000;
+      transition: color .13s;
+    }
+    .lightbox-close:hover { color: #fff;}
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @media (max-width:1200px) {
+      .album { gap: 30px 1.5%;}
+      .year-card { width: 99vw; max-width: 99vw;}
+    }
+    @media (max-width:850px) {
+      .album { flex-direction: column; align-items: center;}
+      .year-card { width: 98vw;}
+    }
+    @media (max-width:600px) {
+      header h1 { font-size: 1.4rem;}
+      .container { padding: 0 2vw;}
+      .year-card { width: 99vw; max-width: 99vw;}
+      .lightbox-img { max-width: 97vw; max-height: 60vh;}
+      .lightbox-close { right: 16px; font-size: 2rem;}
+    }
